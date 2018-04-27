@@ -12,10 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var topWindow: CustomWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        topWindow = CustomWindow(frame: UIScreen.main.bounds)
+        topWindow?.rootViewController = ViewController()
+        topWindow?.windowLevel = UIWindowLevelNormal + 1
+        topWindow?.isHidden = false
         return true
     }
 
